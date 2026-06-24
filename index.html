@@ -448,14 +448,16 @@
 
     <span style="color:#c084fc;">def</span> <span style="color:#fbbf24;">atacar</span>(<span style="color:#e2e8f0;">self</span>, rival):
         dano <span style="color:#94a3b8;">=</span> <span style="color:#fbbf24;">random</span>.<span style="color:#fbbf24;">randint</span>(<span style="color:#facc15;">10</span>, <span style="color:#facc15;">30</span>)
-        rival.hp <span style="color:#94a3b8;">-=</span> dano
-        <span style="color:#c084fc;">return</span> <span style="color:#fbbf24;">f</span><span style="color:#a5d6a7;">"</span><span style="color:#e2e8f0;">{self.nombre</span><span style="color:#a5d6a7;">} </span><span style="color:#e2e8f0;">golpea a </span><span style="color:#a5d6a7;">{</span><span style="color:#e2e8f0;">rival.nombre</span><span style="color:#a5d6a7;">} </span><span style="color:#e2e8f0;">por </span><span style="color:#a5d6a7;">{</span><span style="color:#e2e8f0;">dano</span><span style="color:#a5d6a7;">}</span><span style="color:#e2e8f0;"> de dano!</span><span style="color:#a5d6a7;">"</span>
+        <span style="color:#c084fc;">return</span> rival.<span style="color:#fbbf24;">recibir</span>(dano)
+
+    <span style="color:#c084fc;">def</span> <span style="color:#fbbf24;">recibir</span>(<span style="color:#e2e8f0;">self</span>, dano):
+        <span style="color:#e2e8f0;">self</span>.hp <span style="color:#94a3b8;">-=</span> dano
+        <span style="color:#c084fc;">return</span> <span style="color:#fbbf24;">f</span><span style="color:#a5d6a7;">"</span><span style="color:#e2e8f0;">{self.nombre</span><span style="color:#a5d6a7;">} </span><span style="color:#e2e8f0;">recibe </span><span style="color:#a5d6a7;">{</span><span style="color:#e2e8f0;">dano</span><span style="color:#a5d6a7;">} </span><span style="color:#e2e8f0;">de dano! HP: </span><span style="color:#a5d6a7;">{</span><span style="color:#e2e8f0;">self.hp</span><span style="color:#a5d6a7;">}</span><span style="color:#a5d6a7;">"</span>
 
 pikachu <span style="color:#94a3b8;">=</span> <span style="color:#60a5fa;">Pokemon</span>(<span style="color:#a5d6a7;">"Pikachu"</span>, <span style="color:#a5d6a7;">"Electrico"</span>, <span style="color:#facc15;">100</span>)
 charmander <span style="color:#94a3b8;">=</span> <span style="color:#60a5fa;">Pokemon</span>(<span style="color:#a5d6a7;">"Charmander"</span>, <span style="color:#a5d6a7;">"Fuego"</span>, <span style="color:#facc15;">90</span>)
 
-<span style="color:#fbbf24;">print</span>(pikachu.<span style="color:#fbbf24;">atacar</span>(charmander))
-<span style="color:#fbbf24;">print</span>(<span style="color:#fbbf24;">f</span><span style="color:#a5d6a7;">"</span><span style="color:#e2e8f0;">HP de Charmander: </span><span style="color:#a5d6a7;">{</span><span style="color:#e2e8f0;">charmander.hp</span><span style="color:#a5d6a7;">}</span><span style="color:#a5d6a7;">"</span>)</pre>
+<span style="color:#fbbf24;">print</span>(pikachu.<span style="color:#fbbf24;">atacar</span>(charmander))</pre>
             </div>
           </div>
         </div>

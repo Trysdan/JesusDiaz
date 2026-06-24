@@ -211,13 +211,18 @@
   </nav>
 
   <!-- ===== HERO ===== -->
-  <section class="min-h-screen flex items-center justify-center relative overflow-hidden px-4 pt-16">
+  <section class="min-h-screen flex items-center relative overflow-hidden px-4 pt-16">
     <div class="absolute inset-0 pointer-events-none" style="background: radial-gradient(ellipse at 50% 0%, rgba(59,130,246,0.08) 0%, transparent 60%);"></div>
-    <div class="max-w-4xl mx-auto text-center relative z-10">
-      <div class="reveal flex flex-col items-center gap-5">
-        <div class="w-28 h-28 sm:w-32 sm:h-32 rounded-full overflow-hidden border-2" style="border-color: rgba(59,130,246,0.3); box-shadow: 0 0 30px rgba(59,130,246,0.15);">
-          <img src="images/perfil.png" alt="Jesus Diaz" class="w-full h-full object-cover" />
-        </div>
+
+    <!-- Profile photo as decorative bg element -->
+    <div class="absolute left-0 top-1/2 -translate-y-1/2 w-48 sm:w-56 md:w-72 lg:w-96 aspect-square opacity-20 sm:opacity-25 pointer-events-none select-none hidden sm:block" style="transform: translate(calc(-20% + 2rem), -50%);">
+      <div class="w-full h-full rounded-full overflow-hidden" style="border: 2px solid rgba(59,130,246,0.15); box-shadow: 0 0 80px rgba(59,130,246,0.1); filter: grayscale(30%);">
+        <img src="images/perfil.png" alt="" class="w-full h-full object-cover" />
+      </div>
+    </div>
+
+    <div class="max-w-4xl mx-auto text-center sm:text-left relative z-10 sm:ml-auto sm:pl-48 md:pl-56 lg:pl-72 xl:pl-80">
+      <div class="reveal">
         <span class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full text-xs mono font-medium tracking-wider"
               style="background: rgba(59,130,246,0.08); border: 1px solid rgba(59,130,246,0.15); color: #93c5fd;">
           <span class="w-1.5 h-1.5 rounded-full bg-blue-400 badge-pulse"></span>
@@ -231,11 +236,11 @@
         <span data-i18n="heroLine3">y orquesto tecnologia mediante</span> <span class="text-gradient">IA</span>.
       </h1>
 
-      <p class="reveal text-lg sm:text-xl max-w-2xl mx-auto leading-relaxed mb-10 text-slate-400" style="transition-delay: 0.2s;" data-i18n="heroDesc">
+      <p class="reveal text-lg sm:text-xl max-w-2xl leading-relaxed mb-10 text-slate-400" style="transition-delay: 0.2s;" data-i18n="heroDesc">
         Estudiante de Ingenieria de Sistemas y Game Dev. Construyo soluciones eficientes donde el codigo, los datos y la creatividad convergen.
       </p>
 
-      <div class="reveal flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4 w-full sm:w-auto" style="transition-delay: 0.3s;">
+      <div class="reveal flex flex-col sm:flex-row items-center sm:items-start gap-3 sm:gap-4 w-full sm:w-auto" style="transition-delay: 0.3s;">
         <a href="#projects"
            class="inline-flex items-center justify-center gap-2 w-full sm:w-auto px-6 sm:px-8 py-3.5 sm:py-4 rounded-xl font-semibold text-sm sm:text-base text-white transition-all duration-300 hover:scale-105 active:scale-95 glow-blue"
            style="background: linear-gradient(135deg, #3b82f6, #1d4ed8);">
@@ -250,7 +255,7 @@
         </a>
       </div>
 
-      <div class="reveal flex flex-wrap items-center justify-center gap-x-6 gap-y-2 mt-12 sm:mt-16" style="transition-delay: 0.4s;">
+      <div class="reveal flex flex-wrap items-center sm:items-start gap-x-6 gap-y-2 mt-12 sm:mt-16" style="transition-delay: 0.4s;">
         <div class="flex items-center gap-2 text-xs sm:text-sm text-slate-500 mono">
           <span class="text-blue-400">&gt;</span> <span data-i18n="heroStat1">3+ proyectos</span>
         </div>

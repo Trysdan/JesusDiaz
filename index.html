@@ -398,20 +398,22 @@
                 </div>
                 <span class="text-xs text-slate-500 mono ml-2">laboratorio.py</span>
               </div>
-              <pre class="text-xs leading-relaxed mono" style="color: #94a3b8;"><span style="color: #c084fc;">class</span> <span style="color:#60a5fa;">Nodo</span>:
-    <span style="color:#c084fc;">def</span> <span style="color:#fbbf24;">__init__</span>(<span style="color:#e2e8f0;">self</span>, dato):
-        <span style="color:#e2e8f0;">self</span>.dato <span style="color:#94a3b8;">=</span> dato
-        <span style="color:#e2e8f0;">self</span>.siguiente <span style="color:#94a3b8;">=</span> <span style="color:#c084fc;">None</span>
+              <pre class="text-xs leading-relaxed mono" style="color: #94a3b8;"><span style="color:#c084fc;">class</span> <span style="color:#60a5fa;">Pokemon</span>:
+    <span style="color:#c084fc;">def</span> <span style="color:#fbbf24;">__init__</span>(<span style="color:#e2e8f0;">self</span>, nombre, tipo, hp):
+        <span style="color:#e2e8f0;">self</span>.nombre <span style="color:#94a3b8;">=</span> nombre
+        <span style="color:#e2e8f0;">self</span>.tipo <span style="color:#94a3b8;">=</span> tipo
+        <span style="color:#e2e8f0;">self</span>.hp <span style="color:#94a3b8;">=</span> hp
 
-<span style="color:#c084fc;">def</span> <span style="color:#fbbf24;">invertir_lista</span>(<span style="color:#e2e8f0;">cabeza</span>):
-    anterior <span style="color:#94a3b8;">=</span> <span style="color:#c084fc;">None</span>
-    actual <span style="color:#94a3b8;">=</span> cabeza
-    <span style="color:#fbbf24;">while</span> actual:
-        siguiente <span style="color:#94a3b8;">=</span> actual.siguiente
-        actual.siguiente <span style="color:#94a3b8;">=</span> anterior
-        anterior <span style="color:#94a3b8;">=</span> actual
-        actual <span style="color:#94a3b8;">=</span> siguiente
-    <span style="color:#c084fc;">return</span> anterior</pre>
+    <span style="color:#c084fc;">def</span> <span style="color:#fbbf24;">atacar</span>(<span style="color:#e2e8f0;">self</span>, rival):
+        dano <span style="color:#94a3b8;">=</span> <span style="color:#fbbf24;">random</span>.<span style="color:#fbbf24;">randint</span>(<span style="color:#facc15;">10</span>, <span style="color:#facc15;">30</span>)
+        rival.hp <span style="color:#94a3b8;">-=</span> dano
+        <span style="color:#c084fc;">return</span> <span style="color:#fbbf24;">f</span><span style="color:#a5d6a7;">"</span><span style="color:#e2e8f0;">{self.nombre</span><span style="color:#a5d6a7;">} </span><span style="color:#e2e8f0;">golpea a </span><span style="color:#a5d6a7;">{</span><span style="color:#e2e8f0;">rival.nombre</span><span style="color:#a5d6a7;">} </span><span style="color:#e2e8f0;">por </span><span style="color:#a5d6a7;">{</span><span style="color:#e2e8f0;">dano</span><span style="color:#a5d6a7;">}</span><span style="color:#e2e8f0;"> de dano!</span><span style="color:#a5d6a7;">"</span>
+
+pikachu <span style="color:#94a3b8;">=</span> <span style="color:#60a5fa;">Pokemon</span>(<span style="color:#a5d6a7;">"Pikachu"</span>, <span style="color:#a5d6a7;">"Electrico"</span>, <span style="color:#facc15;">100</span>)
+charmander <span style="color:#94a3b8;">=</span> <span style="color:#60a5fa;">Pokemon</span>(<span style="color:#a5d6a7;">"Charmander"</span>, <span style="color:#a5d6a7;">"Fuego"</span>, <span style="color:#facc15;">90</span>)
+
+<span style="color:#fbbf24;">print</span>(pikachu.<span style="color:#fbbf24;">atacar</span>(charmander))
+<span style="color:#fbbf24;">print</span>(<span style="color:#fbbf24;">f</span><span style="color:#a5d6a7;">"</span><span style="color:#e2e8f0;">HP de Charmander: </span><span style="color:#a5d6a7;">{</span><span style="color:#e2e8f0;">charmander.hp</span><span style="color:#a5d6a7;">}</span><span style="color:#a5d6a7;">"</span>)</pre>
             </div>
           </div>
         </div>
@@ -579,7 +581,7 @@
           heroLine1: 'Diseno logica,',
           heroLine2: 'estructuro datos',
           heroLine3: 'y orquesto tecnologia mediante',
-          heroDesc: 'Estudiante de Ingenieria de Sistemas y Game Dev. Construyo soluciones eficientes donde el codigo, los datos y la creatividad convergen.',
+          heroDesc: 'Estudiante de Ingenieria de Sistemas y Game Dev. Aprendo rapido, me adapto a cualquier tecnologia y construyo soluciones eficientes donde el codigo, los datos y la creatividad convergen.',
           heroCta: 'Ver Proyectos',
           heroCtaDownload: 'Descargar CV',
           heroStat1: '3+ proyectos',
@@ -668,7 +670,7 @@
           ulaStat3: 'Subjects',
           ulaTag1: 'OOP + Dynamic Memory',
           ulaTag2: 'Curricular Design',
-          fatherDesc: 'I programmed the stealth and Alert Intelligence system for enemies that patrol the forest. Finite state machine for detection, noise investigation, and player pursuit in a dense, cinematic horror environment.',
+          fatherDesc: 'I programmed the stealth and enemy alert AI system for enemies that patrol the forest. Finite state machine for detection, noise investigation, and player pursuit in a dense, cinematic horror environment.',
           fatherStat1: 'Finite State Machine',
           fatherStat2: 'Alert States',
           fatherStat3: 'Inventory System',

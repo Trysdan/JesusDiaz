@@ -99,6 +99,7 @@
       content: ''; position: absolute; inset: 0;
       background: linear-gradient(to top, rgba(0,0,0,0.5) 0%, transparent 50%);
       opacity: 0; transition: opacity 0.3s ease;
+      pointer-events: none;
     }
     .img-card:hover::after { opacity: 1; }
 
@@ -882,8 +883,10 @@
       const lightboxImg = document.getElementById('lightbox-img');
       const closeBtn = document.getElementById('lightbox-close');
 
-      document.querySelectorAll('.img-card img, .hero-profile img').forEach(img => {
-        img.addEventListener('click', () => {
+      document.querySelectorAll('.img-card, .hero-profile img').forEach(el => {
+        el.addEventListener('click', () => {
+          const img = el.tagName === 'IMG' ? el : el.querySelector('img');
+          if (!img) return;
           lightboxImg.src = img.src;
           lightboxImg.alt = img.alt;
           lightbox.classList.add('open');
